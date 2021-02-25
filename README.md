@@ -81,7 +81,7 @@ On the data layer, an API request is done with the [Retrofit](http://square.gith
 The domain layer contains the model class and the use case for getting car information (manufacturers, types and build dates). It defines a state class, [`DataState`](https://github.com/KryptKode/Carz/blob/master/app/src/main/java/com/kryptkode/carz/data/model/DataState.kt) to notify the presentation layer of the loading, success and error states. For paginated data, the [`PagedDataState`](https://github.com/KryptKode/Carz/blob/master/app/src/main/java/com/kryptkode/carz/data/model/PagingDataState.kt) class defines an additional state for when the data is on the last page.
  In the app, asynchronous operations are carried out with coroutines. The domain layer defines a class to abstract the different dispatchers.
 
-The presentation layer is implemented with `MVVM` using `ViewModel`. A view state data class is defined. The view is a `Fragment`.  The fragment observes the view state which is wrapped in a `StateFlow`. Whenever a use-case is executed in the `ViewModel`, a reducer, which receives the old state and the results (error, failure, or loading) creates a copy of the new state. This new state is posted to the view.
+The presentation layer is implemented with `MVVM` using `ViewModel`. A view state data class is defined. The view controller is a `Fragment`.  The fragment observes the view state which is wrapped in a `StateFlow`. Whenever a use-case is executed in the `ViewModel`, a reducer, which receives the old state and the results (error, failure, or loading) creates a copy of the new state. This new state is posted to the view.
 
 ### Libraries Used
 
