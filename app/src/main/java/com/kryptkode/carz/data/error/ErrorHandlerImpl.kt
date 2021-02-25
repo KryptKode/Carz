@@ -1,6 +1,5 @@
 package com.kryptkode.carz.data.error
 
-import android.util.Log
 import com.kryptkode.carz.R
 import com.kryptkode.carz.utils.StringResource
 import java.net.ConnectException
@@ -11,7 +10,6 @@ import javax.inject.Inject
 class ErrorHandlerImpl @Inject constructor(private val stringResource: StringResource) : ErrorHandler {
 
     override fun getErrorMessage(e: Throwable?): String {
-        Log.e("HHHHH", "getErrorMessage: ", e)
         if (e is ConnectException) {
             return getString(R.string.connect_exception)
         }
