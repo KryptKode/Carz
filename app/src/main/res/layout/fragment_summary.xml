@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_bar_layout"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/guidelineTop"
+                app:srcCompat="@drawable/ic_emoji" />
+
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin"
+                android:gravity="center"
+                android:text="@string/summary_message"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/image" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/manufacturer_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin_top"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/message">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/manufacturer_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_manufacturer"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+
+                    <ImageView
+                        android:id="@+id/manufacturer_image"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/item_margin"
+                        android:contentDescription="@string/title_manufacturer"
+                        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/manufacturer_label"
+                        app:srcCompat="@drawable/ic_manufacturer" />
+
+
+                    <TextView
+                        android:id="@+id/manufacturer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_margin"
+                        android:layout_marginEnd="@dimen/item_margin"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        app:layout_constraintBottom_toBottomOf="@id/manufacturer_image"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/manufacturer_image"
+                        app:layout_constraintTop_toTopOf="@id/manufacturer_image"
+                        tools:text="Toyota" />
+
+                    <include layout="@layout/guidelines" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/car_type_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin_top"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/manufacturer_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/car_type_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_type"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+
+                    <ImageView
+                        android:id="@+id/car_type_image"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/item_margin"
+                        android:contentDescription="@string/car_type"
+                        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/car_type_label"
+                        app:srcCompat="@drawable/ic_model" />
+
+
+                    <TextView
+                        android:id="@+id/car_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_margin"
+                        android:layout_marginEnd="@dimen/item_margin"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        app:layout_constraintBottom_toBottomOf="@id/car_type_image"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/car_type_image"
+                        app:layout_constraintTop_toTopOf="@id/car_type_image"
+                        tools:text="Camry" />
+
+                    <include layout="@layout/guidelines" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/car_build_date_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_margin_top"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                app:layout_constraintTop_toBottomOf="@id/car_type_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/car_build_date_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_build_date"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toTopOf="@id/guidelineTop" />
+
+
+                    <ImageView
+                        android:id="@+id/car_build_date_image"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/item_margin"
+                        android:contentDescription="@string/car_type"
+                        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
+                        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+                        app:layout_constraintTop_toBottomOf="@id/car_build_date_label"
+                        app:srcCompat="@drawable/ic_date" />
+
+
+                    <TextView
+                        android:id="@+id/car_build_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/item_margin"
+                        android:layout_marginEnd="@dimen/item_margin"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                        app:layout_constraintBottom_toBottomOf="@id/car_build_date_image"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                        app:layout_constraintStart_toEndOf="@id/car_build_date_image"
+                        app:layout_constraintTop_toTopOf="@id/car_build_date_image"
+                        tools:text="@tools:sample/date/mmddyy" />
+
+                    <include layout="@layout/guidelines" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <include layout="@layout/guidelines" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

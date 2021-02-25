@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.App.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">?colorOnSurface</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextAppearance.App.TextInputLayout.HintText</item>
+        <item name="hintTextColor">?colorOnSurface</item>
+        <item name="android:paddingBottom">@dimen/item_margin</item>
+        <item name="boxStrokeColor">@color/text_input_stroke_color</item>
+    </style>
+
+</resources>

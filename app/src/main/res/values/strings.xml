@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Carz</string>
+    <string name="title_manufacturer">Manufacturer</string>
+    <string name="retry_btn_text">Retry</string>
+    <string name="error_img_cd">State image</string>
+
+    <string name="connect_exception">Could not connect to the server. Please check your
+        internet connection and try again.
+    </string>
+    <string name="unknown_host_exception">Could not connect to the server.
+        Please check your internet connection
+    </string>
+    <string name="timed_out_exception">Request timed out while trying to connect.
+        Please ensure you have a strong signal and try again.
+    </string>
+    <string name="unknown_exception">An unexpected error has occurred. Try
+        again and contact the administrator
+    </string>
+    <string name="manufacturers_loading_message">Loading manufacturers…</string>
+    <string name="car_types_loading_message">Loading car types…</string>
+    <string name="build_dates_loading_message">Loading build dates…</string>
+    <string name="summary_message">See the summary of your selections</string>
+    <string name="car_type">Car type</string>
+    <string name="car_build_date">Build date</string>
+    <string name="title_summary">Summary</string>
+    <string name="title_car_type">Choose car type</string>
+    <string name="title_build_date">Choose build date</string>
+    <string name="number_label">#%s</string>
+    <string name="manufacturers_message">Manufacturers will show here soon</string>
+    <string name="car_type_search_hint">Car model name</string>
+</resources>

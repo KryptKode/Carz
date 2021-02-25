@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_h1">24sp</dimen>
+    <dimen name="text_size_h2">22sp</dimen>
+    <dimen name="text_size_h3">20sp</dimen>
+    <dimen name="text_size_h4">18sp</dimen>
+    <dimen name="text_size_main">18sp</dimen>
+    <dimen name="text_size_strong2">16sp</dimen>
+    <dimen name="text_size_body">22sp</dimen>
+
+    <dimen name="appbar_elevation">8dp</dimen>
+
+    <dimen name="item_margin">8dp</dimen>
+    <dimen name="item_margin_top">24dp</dimen>
+    <dimen name="item_padding">8dp</dimen>
+    <dimen name="error_max_width">256dp</dimen>
+    <dimen name="list_item_padding">8dp</dimen>
+    <dimen name="drawable_padding">10dp</dimen>
+    <dimen name="item_img_size">36dp</dimen>
+
+</resources>

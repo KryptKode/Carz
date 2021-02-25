@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/manufacturerFragment">
+
+
+    <fragment
+        android:id="@+id/manufacturerFragment"
+        android:name="com.kryptkode.carz.ui.manufacturer.ManufacturerFragment"
+        android:label="ManufacturerFragment"
+        tools:layout="@layout/fragment_manufacturer"/>
+
+    <fragment
+        android:id="@+id/carTypesFragment"
+        android:name="com.kryptkode.carz.ui.cartypes.CarTypesFragment"
+        android:label="CarTypesFragment"
+        tools:layout="@layout/fragment_car_type"/>
+
+    <action
+        android:id="@+id/action_global_carTypesFragment"
+        app:destination="@id/carTypesFragment" />
+
+    <fragment
+        android:id="@+id/carBuildDateFragment"
+        android:name="com.kryptkode.carz.ui.carbuilddate.CarBuildDateFragment"
+        android:label="CarBuildDateFragment"
+        tools:layout="@layout/fragment_car_build_date"/>
+
+    <action
+        android:id="@+id/action_global_carBuildDateFragment"
+        app:destination="@id/carBuildDateFragment" />
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.kryptkode.carz.ui.summary.SummaryFragment"
+        android:label="SummaryFragment"
+        tools:layout="@layout/fragment_summary"/>
+
+    <action
+        android:id="@+id/action_global_summaryFragment"
+        app:destination="@id/summaryFragment" />
+</navigation>
