@@ -69,7 +69,7 @@ To build this project, you require:
 - Static code analysis with [detekt](https://github.com/detekt/detekt)
 - Dependency management with [buildSrc](https://gradle.org/kotlin/)  (Kotlin DSL)
 - Dependency updates with [buildSrcVersions](https://jmfayard.github.io/refreshVersions/)
-- [Git hooks](https://github.com/KryptKode/DroidArch/tree/master/scripts/git-hooks) to perform ktlint, detekt and lint checks before committing
+- [Git hooks](https://github.com/KryptKode/Carz/blob/master/scripts/git-hooks/pre-commit.sh) to perform ktlint, detekt and lint checks before committing
 - Some UI tests in [Espresso](https://developer.android.com/training/testing/espresso)
 
 ### Architecture
