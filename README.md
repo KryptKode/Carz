@@ -6,13 +6,15 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Carz
-
-The app fetches car manufacturers and as the user scrolls the list, more pages are gotten from the server.
- When the user clicks on a car manufacturer, a screen to choose the car type opens. On the car type screen, the app displays the lists of car types for that manufacturer.
-
-There is a search field on the screen where the car types are filtered by name, according to what is entered on the search field. When the user clicks on a car type, the screen to select the date the car what built opens.
-
-On the screen to choose a build date, the app fetches the list and displays it and when the user clicks on any of them, a screen that shows the summary of their selections shows.
+A simple android in Kotlin that applies the clean architecture concept.
+It uses Kotlin Gradle DSL ([buildSrc](https://gradle.org/kotlin/) ) which brings Kotlin’s rich
+language features to Gradle configuration. The project also uses
+[detekt](https://github.com/detekt/detekt) to detect code smells and
+[ktlint](https://github.com/pinterest/ktlint) to enforce proper code style.
+[Github actions](https://github.com/KryptKode/Carz/actions) handle continuous integration and
+ run detekt, ktlint, lint and unit tests concurrently.
+ A pre-commit git hook verifies the project’s code style before committing code.
+  Test coverage reports are uploaded to [codecov](https://codecov.io/gh/KryptKode/Carz/).
 
 
 ## Outline
@@ -28,7 +30,12 @@ On the screen to choose a build date, the app fetches the list and displays it a
 
 ### App Walkthrough
 
-The app fetches car manufacturers and as the user scrolls the list, more pages are gotten from the server. When the user clicks on a car manufacturer, a screen to choose the
+The app fetches car manufacturers and as the user scrolls the list, more pages are gotten from the server.
+ When the user clicks on a car manufacturer, a screen to choose the car type opens. On the car type screen, the app displays the lists of car types for that manufacturer.
+
+There is a search field on the screen where the car types are filtered by name, according to what is entered on the search field. When the user clicks on a car type, the screen to select the date the car what built opens.
+
+On the screen to choose a build date, the app fetches the list and displays it and when the user clicks on any of them, a screen that shows the summary of their selections shows.
 
 
 <h4 align="center">
