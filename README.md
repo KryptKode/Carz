@@ -120,3 +120,4 @@ Testing is done with the JUnit4 testing framework, and with Google Truth for mak
 - Improve Unit test coverage
 - Write more UI tests
 - Improve UI/UX
+- Improve the search functionality
