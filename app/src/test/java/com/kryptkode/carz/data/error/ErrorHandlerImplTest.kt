@@ -13,15 +13,8 @@ import org.junit.Before
 import org.junit.Test
 
 class ErrorHandlerImplTest {
-    private lateinit var stringResource: StringResource
-    private lateinit var sut: ErrorHandlerImpl
-
-    @Before
-    fun setup() {
-        stringResource = mockk()
-        sut = ErrorHandlerImpl(stringResource)
-        stubErrorMessage("")
-    }
+    private val stringResource: StringResource = mockk()
+    private val sut = ErrorHandlerImpl(stringResource)
 
     @Test
     fun `getErrorMessage with ConnectException returns error message`() {

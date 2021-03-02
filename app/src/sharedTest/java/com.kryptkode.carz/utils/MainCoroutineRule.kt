@@ -1,5 +1,5 @@
 
-package com.kryptkode.cardinfofinder.utils
+package com.kryptkode.carz.utils
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

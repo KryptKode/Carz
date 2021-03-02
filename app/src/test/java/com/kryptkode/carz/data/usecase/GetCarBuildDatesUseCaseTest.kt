@@ -2,8 +2,8 @@ package com.kryptkode.carz.data.usecase
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import com.kryptkode.cardinfofinder.utils.MainCoroutineRule
-import com.kryptkode.cardinfofinder.utils.runBlockingTest
+import com.kryptkode.carz.utils.MainCoroutineRule
+import com.kryptkode.carz.utils.runBlockingTest
 import com.kryptkode.carz.data.dispatcher.TestDispatcher
 import com.kryptkode.carz.data.error.FakeErrorHandler
 import com.kryptkode.carz.data.model.CarBuildDate
@@ -11,7 +11,6 @@ import com.kryptkode.carz.data.model.DataState
 import com.kryptkode.carz.data.service.FakeCarApiService
 import com.kryptkode.carz.utils.MockDataFactory.makeFakeBuildDateResponse
 import java.io.IOException
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -20,19 +19,10 @@ class GetCarBuildDatesUseCaseTest {
     @get:Rule
     val coroutineRule = MainCoroutineRule()
 
-    private lateinit var apiService: FakeCarApiService
-    private lateinit var errorHandler: FakeErrorHandler
-    private lateinit var dispatchers: TestDispatcher
-
-    private lateinit var sut: GetCarBuildDatesUseCase
-
-    @Before
-    fun setup() {
-        apiService = FakeCarApiService()
-        errorHandler = FakeErrorHandler()
-        dispatchers = TestDispatcher(coroutineRule.testDispatcher)
-        sut = GetCarBuildDatesUseCase(apiService, errorHandler, dispatchers)
-    }
+    private val apiService = FakeCarApiService()
+    private val errorHandler = FakeErrorHandler()
+    private val dispatchers = TestDispatcher(coroutineRule.testDispatcher)
+    private val sut = GetCarBuildDatesUseCase(apiService, errorHandler, dispatchers)
 
     @Test
     fun `executes emits loading state initially`() = coroutineRule.runBlockingTest {

@@ -4,17 +4,16 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
-import com.kryptkode.cardinfofinder.utils.MainCoroutineRule
-import com.kryptkode.cardinfofinder.utils.runBlockingTest
+import com.kryptkode.carz.utils.MainCoroutineRule
+import com.kryptkode.carz.utils.runBlockingTest
 import com.kryptkode.carz.data.model.CarBuildDate
 import com.kryptkode.carz.data.model.DataState
 import com.kryptkode.carz.data.usecase.GetCarBuildDatesUseCase
 import com.kryptkode.carz.ui.carbuilddate.CarBuildDateViewModel.CarBuildDateParams
 import com.kryptkode.carz.ui.carbuilddate.CarBuildDateViewModel.Companion.PARAM_KEY
 import com.kryptkode.carz.utils.MockDataFactory.makeFakeCarBuildDate
-import io.mockk.MockKAnnotations
 import io.mockk.every
-import io.mockk.impl.annotations.MockK
+import io.mockk.mockk
 import io.mockk.unmockkAll
 import io.mockk.verify
 import kotlinx.coroutines.flow.flowOf
@@ -31,20 +30,15 @@ class CarBuildDateViewModelTest {
     @get:Rule
     val mainCoroutineRule = MainCoroutineRule()
 
-    @MockK
-    lateinit var getCarBuildDates: GetCarBuildDatesUseCase
+    private val getCarBuildDates: GetCarBuildDatesUseCase = mockk()
 
-    @MockK(relaxed = true)
-    lateinit var savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle = mockk(relaxed = true)
 
     private lateinit var sut: CarBuildDateViewModel
 
     @Before
     fun setup() {
-        MockKAnnotations.init(this)
         sut = CarBuildDateViewModel(getCarBuildDates, savedStateHandle)
-
-        stubSaveStateGetLiveData()
     }
 
     @Test

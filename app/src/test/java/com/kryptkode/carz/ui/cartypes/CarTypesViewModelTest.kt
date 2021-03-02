@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import com.google.common.truth.Truth.assertThat
-import com.kryptkode.cardinfofinder.utils.MainCoroutineRule
-import com.kryptkode.cardinfofinder.utils.runBlockingTest
+import com.kryptkode.carz.utils.MainCoroutineRule
+import com.kryptkode.carz.utils.runBlockingTest
 import com.kryptkode.carz.data.model.CarType
 import com.kryptkode.carz.data.model.PagingDataState
 import com.kryptkode.carz.data.usecase.GetCarTypeUseCase
@@ -15,6 +15,7 @@ import com.kryptkode.carz.utils.MockDataFactory.makeFakeCarType
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
+import io.mockk.mockk
 import io.mockk.unmockkAll
 import io.mockk.verify
 import kotlinx.coroutines.flow.flowOf
@@ -31,19 +32,15 @@ class CarTypesViewModelTest {
     @get:Rule
     val mainCoroutineRule = MainCoroutineRule()
 
-    @MockK
-    lateinit var getCarTypeUseCase: GetCarTypeUseCase
+    private val getCarTypeUseCase: GetCarTypeUseCase = mockk()
 
-    @MockK(relaxed = true)
-    lateinit var savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle = mockk(relaxed = true)
 
     private lateinit var sut: CarTypesViewModel
 
     @Before
     fun setup() {
-        MockKAnnotations.init(this)
         sut = CarTypesViewModel(getCarTypeUseCase, savedStateHandle)
-
         stubSaveStateGetLiveData()
     }
 

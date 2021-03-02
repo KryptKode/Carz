@@ -15,15 +15,8 @@ import org.junit.Test
 import retrofit2.HttpException
 
 class CarServiceTest {
-    private lateinit var mockWebServer: MockWebServer
-    private lateinit var sut: CarApiService
-
-    @Before
-    fun setup() {
-        mockWebServer = MockWebServer()
-        mockWebServer.start()
-        sut = makeTestCarApiService(okHttpClient, mockWebServer)
-    }
+    private val mockWebServer = MockWebServer()
+    private val sut =  makeTestCarApiService(okHttpClient, mockWebServer)
 
     @Test
     fun `getManufacturers has API_KEY`() = runBlocking {
