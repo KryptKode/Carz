@@ -2,14 +2,14 @@ package com.kryptkode.carz.data.usecase
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import com.kryptkode.carz.utils.MainCoroutineRule
-import com.kryptkode.carz.utils.runBlockingTest
 import com.kryptkode.carz.data.dispatcher.TestDispatcher
 import com.kryptkode.carz.data.error.FakeErrorHandler
 import com.kryptkode.carz.data.model.CarManufacturer
 import com.kryptkode.carz.data.model.PagingDataState
 import com.kryptkode.carz.data.service.FakeCarApiService
+import com.kryptkode.carz.utils.MainCoroutineRule
 import com.kryptkode.carz.utils.MockDataFactory.makeFakeManufacturerResponse
+import com.kryptkode.carz.utils.runBlockingTest
 import java.io.IOException
 import org.junit.Rule
 import org.junit.Test
@@ -21,7 +21,7 @@ class GetManufacturersUseCaseTest {
 
     private val apiService = FakeCarApiService()
     private val errorHandler = FakeErrorHandler()
-    private val dispatchers =  TestDispatcher(coroutineRule.testDispatcher)
+    private val dispatchers = TestDispatcher(coroutineRule.testDispatcher)
 
     private val sut = GetManufacturersUseCase(apiService, errorHandler, dispatchers)
 

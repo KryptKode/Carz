@@ -10,13 +10,12 @@ import java.net.HttpURLConnection
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
-import org.junit.Before
 import org.junit.Test
 import retrofit2.HttpException
 
 class CarServiceTest {
     private val mockWebServer = MockWebServer()
-    private val sut =  makeTestCarApiService(okHttpClient, mockWebServer)
+    private val sut = makeTestCarApiService(okHttpClient, mockWebServer)
 
     @Test
     fun `getManufacturers has API_KEY`() = runBlocking {

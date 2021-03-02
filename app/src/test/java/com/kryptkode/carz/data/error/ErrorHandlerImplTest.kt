@@ -9,7 +9,6 @@ import io.mockk.verify
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
-import org.junit.Before
 import org.junit.Test
 
 class ErrorHandlerImplTest {
